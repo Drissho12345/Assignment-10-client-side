@@ -1,6 +1,4 @@
-import { LuFacebook } from "react-icons/lu";
-import { FaCameraRetro } from "react-icons/fa";
-import { FiTwitter } from "react-icons/fi";
+
 import { Link } from "react-router-dom";
 const Card = ({spots}) => {
     const data = spots;
@@ -13,16 +11,8 @@ const Card = ({spots}) => {
                     <img className="w-full h-[300px]" src={url} alt="" />
                 </div>
                 <div className="md:h-[220px] pt-3">
-                    <div className="flex  justify-between gap-16">
-                        <div>
-                            <h2 className="font-bold text-xl">{text}</h2>
-                            
-                        </div>
-                        <div className="flex text-xl gap-4">
-                            <LuFacebook className="cursor-pointer"/>
-                            <FaCameraRetro className="cursor-pointer"/>
-                            <FiTwitter className="cursor-pointer"/>
-                        </div>
+                    <div>
+                        <h2 className="font-bold text-xl">{text}</h2>
                     </div>
                     <div className="pb-3">
                        <h3 className="text-gray-400 font-bold "><span>Country: </span>{name}</h3>

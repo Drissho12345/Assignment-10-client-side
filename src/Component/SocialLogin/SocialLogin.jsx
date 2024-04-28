@@ -4,12 +4,11 @@ import { FcGoogle } from "react-icons/fc";
 import { SiGithub } from "react-icons/si";
 import { AuthContext } from './../AuthProvider/AuthProvider';
 import { toast } from "react-toastify";
-import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
-import auth from "../Firebase/Firebase.config";
+// import { Navigate } from "react-router-dom";
 const SocialLogin = () => {
-    const {googleLogin,} = useContext(AuthContext)
+    const {googleLogin,githubLogin} = useContext(AuthContext)
     
-    const githubProvider = new GithubAuthProvider();
+   
     const handleGoogleLogin =() =>{
         googleLogin()
         .then(result =>{
@@ -17,6 +16,7 @@ const SocialLogin = () => {
             if(result.user){
                 toast.success("Google Login successfully")
             }
+            // Navigate(location?.state ? location.state : '/');
         })
         .catch(error =>{
             console.error(error)
@@ -24,12 +24,17 @@ const SocialLogin = () => {
         })
     }
     const handleGithubLogin =() =>{
-        signInWithPopup(auth,githubProvider)
+        githubLogin()
         .then(result => {
             console.log(result.user);
+            if(result.user){
+                toast.success("GitHub Login successfully")
+            }
+            // Navigate(location?.state ? location.state : '/');
         })
         .catch(error => {
             console.log(error);
+            toast.error("GitHub Login Failed")
         })
     }
     return (
@@ -38,7 +43,7 @@ const SocialLogin = () => {
             < FcGoogle className=" text-white rounded-full h-6 w-6" />
             Login with Google</button>
 
-            <button onSubmit={handleGithubLogin} type="button" className="py-2 flex gap-2 px-5 mb-4 mt-8 mx-auto block shadow-lg border rounded-md border-black">
+            <button onClick={handleGithubLogin} type="button" className="py-2 flex gap-2 px-5 mb-4 mt-8 mx-auto block shadow-lg border rounded-md border-black">
             < SiGithub className="rounded-full h-6 w-6" />
             Login with Github</button>
         </div>

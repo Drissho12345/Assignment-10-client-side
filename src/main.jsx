@@ -18,6 +18,7 @@ import CardDetails from './Component/CardDetails/CardDetails.jsx';
 import AuthProvider from './Component/AuthProvider/AuthProvider.jsx';
 import Login from './Component/Login/Login.jsx';
 import Register from './Component/Register/Register.jsx';
+import MyList from './Component/MyList/MyList.jsx';
 
 
 
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
       {
         path:"/Register",
         element:<Register></Register>,
+      },
+      {
+        path:"/myList",
+        element:<MyList></MyList>,
+        loader: () => fetch('http://localhost:5000/spots'),
       },
     ]
   },

@@ -38,8 +38,8 @@ const AddTouristsSpots = () => {
         <div>
             <div  className=" mb-10">
                 <form onSubmit={handleAddTouristSpot} className=" w-full p-5 bg-gray-300">
-                    <h1 className="text-5xl font-bold text-center mb-4">Add Tourists Spots</h1>
-                    <div className="grid grid-cols-2 gap-5">
+                    <h1 className="md:text-5xl text-[27px] font-bold text-center mb-4">Add Tourists Spots</h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <div  className="mb-6">
                             <h3 className="font-bold">Tourists Spots Name:</h3>

@@ -12,7 +12,6 @@ const Register = () => {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        console.log('form submited');
         const text = e.target.text.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
