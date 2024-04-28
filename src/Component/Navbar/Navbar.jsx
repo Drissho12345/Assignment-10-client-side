@@ -1,7 +1,7 @@
 
-// import { useContext } from "react";
-import {  NavLink } from "react-router-dom";
-// import { AuthContext } from "../Auth/AuthProvider";
+import { useContext } from "react";
+import {  Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
     const links = <>
@@ -10,8 +10,8 @@ const Navbar = () => {
       <li className="text-[18px] text-[#23BE0A]"><NavLink to="/AddTouristsSpot">Add Tourists Spot</NavLink></li>
       <li className="text-[18px] text-[#23BE0A]"><NavLink to="/MyList">My List</NavLink></li>
     </>
-
-    // const {user,logOut} = useContext(AuthContext)
+    const {user} = useContext(AuthContext);
+    console.log(user);
     return (
         <div className="navbar  bg-orange-200 shadow-2xl">
             <div className="navbar-start">
@@ -33,7 +33,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2">
-                {/* <Link to={"/Login"}>
+                <Link to={"/Login"}>
                     {user ? <div className="flex gap-3">
                     <div className="tooltip" data-tip={user.displayName}>
                         <img className="border rounded-full w-[45px] h-[45px]" src={user.photoURL} />
@@ -42,7 +42,7 @@ const Navbar = () => {
                     </div> : 
                     <a className="md:btn text-[12px] px-2 rounded py-1 text-[#fff] bg-[#23BE0A]">Login</a>}
                    
-                </Link> */}
+                </Link>
             </div>
         </div>
     );

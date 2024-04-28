@@ -15,6 +15,11 @@ import AddTouristsSpots from './Component/AddTouristsSpots/AddTouristsSpots.jsx'
 import Cards from './Component/Cards/Cards.jsx';
 import CardDetails from './Component/CardDetails/CardDetails.jsx';
 
+import AuthProvider from './Component/AuthProvider/AuthProvider.jsx';
+import Login from './Component/Login/Login.jsx';
+import Register from './Component/Register/Register.jsx';
+
+
 
 const router = createBrowserRouter([
   {
@@ -37,14 +42,24 @@ const router = createBrowserRouter([
       {
         path:"/AddTouristsSpot",
         element: <AddTouristsSpots></AddTouristsSpots>
-      }
+      },
+      {
+        path:"/Login",
+        element:<Login></Login>,
+      },
+      {
+        path:"/Register",
+        element:<Register></Register>,
+      },
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+      <AuthProvider>
+           <RouterProvider router={router} />
+      </AuthProvider>
     <ToastContainer />
   </React.StrictMode>,
 )

@@ -6,7 +6,7 @@ import PopularTours from "../PopularTours/PopularTours";
 import Card from "../Card/Card";
 const Cards = () => {
     const spots = useLoaderData();
-    console.log(spots );
+    // console.log(spots );
     return (
         <div>
             <Banner></Banner>
