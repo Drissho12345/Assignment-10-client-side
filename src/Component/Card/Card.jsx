@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-const Card = ({spots}) => {
+const Card = ({spots,}) => {
     const data = spots;
     console.log(data);
     const {description ,name,text,url} = data;

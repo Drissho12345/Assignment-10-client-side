@@ -21,6 +21,7 @@ import Register from './Component/Register/Register.jsx';
 import MyList from './Component/MyList/MyList.jsx';
 import ProtectedRoute from './Component/ProtectedRoute/ProtectedRoute.jsx';
 import AllTouristsSpot from './Component/AllTouristsSpot/AllTouristsSpot';
+import UpdateMySpot from './Component/UpdateMySpot/UpdateMySpot.jsx';
 
 
 
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/spots'),
       },
       {
+        path:"/UpdateMySpot/:id",
+        element: <UpdateMySpot></UpdateMySpot>,
+        loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`),
+      },
+      {
         path:"/Login",
         element:<Login></Login>,
       },
@@ -65,7 +71,9 @@ const router = createBrowserRouter([
       },
       {
         path:"/myList",
-        element:<MyList></MyList>,
+        element:<ProtectedRoute>
+         <MyList></MyList>
+      </ProtectedRoute>,
         loader: () => fetch('http://localhost:5000/spots'),
       },
     ]

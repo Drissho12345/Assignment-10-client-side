@@ -1,11 +1,44 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyList = () => {
     const {user} = useContext(AuthContext)
     
     const [item,setItem] = useState([])
-    // console.log(user);
+
+    const handleDelete =_id =>{
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              
+              fetch(`http://localhost:5000/myCardDelete/${_id}`,{
+                method: 'DELETE'
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0){
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your Spot has been deleted.",
+                        icon: "success"
+                      });
+                }
+              })
+            }
+          });
+    }
+    
     useEffect(()=>{
         fetch(`http://localhost:5000/mySpots/${user?.email}`)
         .then(res => res.json())
@@ -46,8 +79,10 @@ const MyList = () => {
                                     <td className="border">{item.seasonality}</td>
                                     <td className="border">{item.description.slice(0,90)}</td>
                                     <td className="flex">
-                                        <button className="btn text-sm bg-slate-500">Delete</button>
-                                        <button className="btn bg-slate-500">Update</button>
+                                        <button onClick={()=>handleDelete(item._id)} className="btn text-sm bg-slate-500">Delete</button>
+                                        <Link to={`/UpdateMySpot/${item._id}`}>
+                                            <button className="btn bg-slate-500">Update</button>
+                                        </Link>
                                     </td>
                                 </tr>
                             </table>

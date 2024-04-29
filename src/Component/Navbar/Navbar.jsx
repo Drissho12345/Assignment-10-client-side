@@ -2,13 +2,15 @@
 import { useContext } from "react";
 import {  Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Tooltip } from "react-tooltip";
+
 
 const Navbar = () => {
     const links = <>
       <li className="text-[18px] text-[#23BE0A]"><NavLink to="">Home</NavLink></li>
       <li className="text-[18px] text-[#23BE0A]"><NavLink to="/AllTouristsSpot">All Tourists Spot</NavLink></li>
       <li className="text-[18px] text-[#23BE0A]"><NavLink to="/AddTouristsSpot">Add Tourists Spot</NavLink></li>
-      <li className="text-[18px] text-[#23BE0A]"><NavLink to="/MyList">My List</NavLink></li>
+     <li className="text-[18px] text-[#23BE0A]"><NavLink to="/MyList">My List</NavLink></li>
     </>
     const {user,logOut} = useContext(AuthContext);
     // console.log(user);
@@ -23,7 +25,7 @@ const Navbar = () => {
                     {links}
                 </ul>
                 </div>
-                <div className="tooltip tooltip-right" data-tip="Southeast Asia">
+                <div data-tooltip-id="tooltip-anchor-show" data-tooltip-place="right" data-tooltip-delay-hide={100} data-tooltip-content="Southeast Asia">
                    <img className=" rounded-full h-10 w-[40px]  md:h-14  md:w-[60px]" src="https://f7c7358c.rocketcdn.me/wp-content/uploads/2022/01/cropped-SOUTHEAST-ASIA_ICON_DARK_ORANGE.png" alt="" />
                 </div>
             </div>
@@ -35,7 +37,7 @@ const Navbar = () => {
             <div className="navbar-end gap-2">
                 <Link to={"/Login"}>
                     {user ? <div className="flex gap-3">
-                    <div className="tooltip tooltip-left" data-tip={user.displayName}>
+                    <div data-tooltip-id="tooltip-anchor-show" data-tooltip-place="left" data-tooltip-content={user.displayName}data-tooltip-delay-hide={100}>
                         <img className="border rounded-full w-[45px] h-[45px]" src={user.photoURL} />
                     </div>
                     <button onClick={ () => logOut()} className="btn btn-secondary">Log Out</button>
@@ -44,6 +46,7 @@ const Navbar = () => {
                    
                 </Link>
             </div>
+            <Tooltip id="tooltip-anchor-show"></Tooltip>
         </div>
     );
 };

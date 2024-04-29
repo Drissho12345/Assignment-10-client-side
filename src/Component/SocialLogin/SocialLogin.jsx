@@ -5,7 +5,6 @@ import { SiGithub } from "react-icons/si";
 import { AuthContext } from './../AuthProvider/AuthProvider';
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-// import { Navigate } from "react-router-dom";
 const SocialLogin = () => {
     const Navigate =useNavigate()
     const {googleLogin,githubLogin,setLoading} = useContext(AuthContext)
@@ -21,7 +20,6 @@ const SocialLogin = () => {
             if(result.user){
                 toast.success("Google Login successfully")
             }
-            // Navigate(location?.state ? location.state : '/');
         })
         .catch(error =>{
             console.error(error)
@@ -38,7 +36,6 @@ const SocialLogin = () => {
             if(result.user){
                 toast.success("GitHub Login successfully")
             }
-            // Navigate(location?.state ? location.state : '/');
         })
         .catch(error => {
             console.log(error);

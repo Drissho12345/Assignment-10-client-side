@@ -46,7 +46,7 @@ const Banner = () => {
                             <img src="https://cdn.educba.com/academy/wp-content/uploads/2023/01/Places-to-Vist-in-Thailand-1.jpg" className="w-full h-[500px]" />
                         </div>
                     </SwiperSlide>
-            </div>
+               </div>
        </Swiper>
     );
 };
