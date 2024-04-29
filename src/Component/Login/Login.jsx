@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link,} from "react-router-dom";
+import { Link, Navigate, useNavigate,} from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
-    // const navigate =useNavigate()
+    const Navigate =useNavigate()
     const [ showPassword ,setShowPassword] = useState(false)
     const {loginUser,setLoading} = useContext(AuthContext)
 
@@ -24,7 +24,7 @@ const Login = () => {
         .then(register =>{
             // console.log(register.user);
             setLoading(false)
-            // Navigate(location?.state ? location.state : '/');
+            Navigate(location?.state ? location.state : '/');
             toast.success("User Login Successfully")
         })
         .catch(error =>{
@@ -32,7 +32,6 @@ const Login = () => {
             toast.error("No account here. Please Register")
         })
     }
-
 
     return (
         <div>
