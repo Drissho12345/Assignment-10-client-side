@@ -1,13 +1,14 @@
 import { useContext, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link, Navigate } from "react-router-dom";
+import { Link,} from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
+    // const navigate =useNavigate()
     const [ showPassword ,setShowPassword] = useState(false)
-    const {loginUser} = useContext(AuthContext)
+    const {loginUser,setLoading} = useContext(AuthContext)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -21,8 +22,9 @@ const Login = () => {
         // console.log(email,password);
         loginUser(email,password)
         .then(register =>{
+            // console.log(register.user);
+            setLoading(false)
             // Navigate(location?.state ? location.state : '/');
-            console.log(register.user);
             toast.success("User Login Successfully")
         })
         .catch(error =>{

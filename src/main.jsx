@@ -19,6 +19,8 @@ import AuthProvider from './Component/AuthProvider/AuthProvider.jsx';
 import Login from './Component/Login/Login.jsx';
 import Register from './Component/Register/Register.jsx';
 import MyList from './Component/MyList/MyList.jsx';
+import ProtectedRoute from './Component/ProtectedRoute/ProtectedRoute.jsx';
+import AllTouristsSpot from './Component/AllTouristsSpot/AllTouristsSpot';
 
 
 
@@ -37,12 +39,21 @@ const router = createBrowserRouter([
       
       {
         path:"/CardDetails/:id",
-        element: <CardDetails></CardDetails>,
+        element: <ProtectedRoute>
+          <CardDetails></CardDetails>
+        </ProtectedRoute>,
         loader: () => fetch('http://localhost:5000/spots')
       },
       {
         path:"/AddTouristsSpot",
-        element: <AddTouristsSpots></AddTouristsSpots>
+        element: <ProtectedRoute>
+        <AddTouristsSpots></AddTouristsSpots>
+      </ProtectedRoute>
+      },
+      {
+        path:"/AllTouristsSpot",
+        element:<AllTouristsSpot></AllTouristsSpot>,
+        loader: () => fetch('http://localhost:5000/spots'),
       },
       {
         path:"/Login",

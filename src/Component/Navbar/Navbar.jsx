@@ -11,7 +11,7 @@ const Navbar = () => {
       <li className="text-[18px] text-[#23BE0A]"><NavLink to="/MyList">My List</NavLink></li>
     </>
     const {user,logOut} = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
     return (
         <div className="navbar  bg-orange-200 shadow-2xl">
             <div className="navbar-start">

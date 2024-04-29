@@ -33,6 +33,10 @@ const AddTouristsSpots = () => {
                 form.reset();
             }
         })
+        .catch(error =>{
+            console.error(error)
+            toast.error("Add Tourists Spots Failed!")
+        })
     }
     return (
         <div>
