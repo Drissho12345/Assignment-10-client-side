@@ -1,9 +1,15 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+
+// animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const [ showPassword ,setShowPassword] = useState()
@@ -51,14 +57,24 @@ const Register = () => {
 
     }
 
+    // animation
+    useEffect(() => {
+        AOS.init({
+          duration: 2000,
+        });
+      }, []);
+
     return (
         <div>
-            <div  className="lg:pl-[300px] mb-10">
-                <form className="rounded-2xl  lg:w-[600px] p-5 bg-gray-300"  onSubmit={handleRegister}>
+            <Helmet>
+                <title>Register</title>
+            </Helmet>
+            <div  className="lg:pl-[300px] mb-10" data-aos="zoom-in-down">
+                <form className="rounded-2xl  lg:w-[600px] text-black p-5 bg-gray-300"  onSubmit={handleRegister}>
                     <h1 className="text-5xl font-bold text-center mb-4">Register Now</h1>
                     <div  className="mb-6">
                     <h3 className="font-bold">Name:</h3>
-                        <label className="input  input-bordered flex items-center gap-2">
+                        <label className="input bg-white input-bordered flex items-center gap-2">
                             <input type="text" name="text" placeholder="Username"required/>
                         </label>
                        
@@ -66,7 +82,7 @@ const Register = () => {
 
                     <div  className="mb-6">
                     <h3 className="font-bold">Photo URL:</h3>
-                        <label className="input input-bordered flex items-center gap-2 mb-4">
+                        <label className="input input-bordered bg-white flex items-center gap-2 mb-4">
                             <input type="url" name="url" placeholder="Input Photo URL"  required/>
                         </label>
                        
@@ -74,14 +90,14 @@ const Register = () => {
 
                     <div className="mb-6">
                         <h3 className="font-bold">Email:</h3>
-                        <label className="input input-bordered flex items-center gap-2">
+                        <label className="input input-bordered bg-white flex items-center gap-2">
                             <input type="email" name="email" placeholder="Email" required/>
                         </label>
                         
                     </div>
                     <div className="mb-10">
                         <h3 className="font-bold">Password:</h3>
-                        <label className="input input-bordered flex items-center gap-2">
+                        <label className="input input-bordered bg-white flex items-center gap-2">
                             <input type={ showPassword ? "text" : "password" } name="password" placeholder="password"  required/>
                             <span className="ml-48 md:ml-[590px] lg:ml-[500px] text-xl absolute " onClick={()=>setShowPassword(!showPassword)}>
                                     {
@@ -93,7 +109,7 @@ const Register = () => {
                     </div>
                     <div className="mb-10">
                         <h3 className="font-bold">Confirm Password:</h3>
-                        <label className="input input-bordered flex items-center gap-2">
+                        <label className="input input-bordered bg-white flex items-center gap-2">
                             <input type={ show ? "text" : "password" } name="confirmPassword" placeholder="password" required/>
                             <span className="ml-48 md:ml-[590px] lg:ml-[500px] text-xl absolute " onClick={()=>setShow(!show)}>
                                 {
@@ -106,7 +122,7 @@ const Register = () => {
                         <input type="checkbox" name="terms" id="terms" />
                         <label className="ml-2" htmlFor="terms">Accept our <a href="">Terms and Condition</a></label>
                     </div>
-                    <button className="btn bg-emerald-400 w-full">Register</button>
+                    <button className="btn bg-emerald-400 text-black w-full">Register</button>
                 
                     <p className="mt-2"> Have an account? Please <Link to={"/login"} className="font-bold">Login</Link></p>
                 </form>

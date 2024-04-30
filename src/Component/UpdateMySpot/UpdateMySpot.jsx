@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 const UpdateMySpot = () => {
@@ -43,6 +44,9 @@ const UpdateMySpot = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Update My Spot</title>
+            </Helmet>
             <div  className=" mb-10">
                 <form onSubmit={handleAddTouristSpot} className=" w-full p-5 bg-gray-300">
                     <h1 className="md:text-5xl text-[27px] font-bold text-center mb-4">Update Tourists Spots</h1>

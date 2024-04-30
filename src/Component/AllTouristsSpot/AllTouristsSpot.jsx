@@ -1,12 +1,16 @@
 // import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AllSpotsCard from "../AllSpotsCard/AllSpotsCard";
+import { Helmet } from "react-helmet";
 
 const AllTouristsSpot = () => {
     const spots = useLoaderData()
     console.log(spots);
     return (
         <div>
+            <Helmet>
+                <title>All Tourists Spot Page</title>
+            </Helmet>
             <div className=" mt-5">
                 <select className="select select-bordered ">
                     <option disabled selected>Short By</option>

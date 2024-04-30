@@ -1,12 +1,30 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+
+// animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const AllSpotsCard = ({spots}) => {
     const data = spots
     console.log(data);
     const {Total,TravelTime,seasonality,price,text,url} = data;
+
+     // animation
+     useEffect(() => {
+        AOS.init({
+          duration: 2000,
+        });
+      }, []);
+
+
     return (
         <div>
-            <div className=" shadow-2xl  p-6 rounded-3xl">
+            <Helmet>
+                <title>All Spots Card Page</title>
+            </Helmet>
+            <div className=" shadow-2xl  p-6 rounded-3xl" data-aos="zoom-in-down">
                 <div className="flex justify-center items-center">
                     <img className="w-full h-[300px]" src={url} alt="" />
                 </div>

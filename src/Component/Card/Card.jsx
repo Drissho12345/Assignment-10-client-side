@@ -1,12 +1,22 @@
+// animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { Link } from "react-router-dom";
+import { useEffect } from 'react';
 const Card = ({spots,}) => {
     const data = spots;
     console.log(data);
     const {description ,name,text,url} = data;
+    // animation
+    useEffect(() => {
+        AOS.init({
+          duration: 2000,
+        });
+      }, []);
     return (
         <div>
-            <div className=" shadow-2xl  p-6 rounded-3xl">
+            <div className=" shadow-2xl  p-6 rounded-3xl" data-aos="zoom-in-down">
                 <div className="flex justify-center items-center">
                     <img className="w-full h-[300px]" src={url} alt="" />
                 </div>

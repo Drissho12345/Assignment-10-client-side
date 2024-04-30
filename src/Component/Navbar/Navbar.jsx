@@ -55,13 +55,13 @@ const Navbar = () => {
             </div>
             <div className="navbar-end gap-2">
                 <Link to={"/Login"}>
-                    {user ? <div className="flex gap-3">
+                    {user ? <div className="flex gap-1 md:gap-3">
                     <div data-tooltip-id="tooltip-anchor-show" data-tooltip-place="left" data-tooltip-content={user.displayName}data-tooltip-delay-hide={100}>
-                        <img className="border rounded-full w-[45px] h-[45px]" src={user.photoURL} />
+                        <img className="border rounded-full md:w-[45px] h-7 w-12 md:h-[45px]" src={user.photoURL} />
                     </div>
-                    <button onClick={ () => logOut()} className="btn btn-secondary">Log Out</button>
+                    <button onClick={ () => logOut()} className="bg-orange-300 pl-1 pr-1 text-[10px] md:text-[12px] w-20 rounded-lg border md:w-20">Log Out</button>
                     </div> : 
-                    <a className="md:btn text-[12px] px-2 rounded py-1 text-[#fff] bg-[#23BE0A]">Login</a>}
+                    <a className="md:btn text-[12px] px-2 rounded py-1 text-black bg-[#23BE0A]">Login</a>}
                    
                 </Link>
                 <div>

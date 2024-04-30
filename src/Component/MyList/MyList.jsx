@@ -2,6 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
+// animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MyList = () => {
     const {user} = useContext(AuthContext)
@@ -47,9 +52,16 @@ const MyList = () => {
             console.log(data);
         })
     },[user])
+    // animation
+    useEffect(() => {
+        AOS.init({
+          duration: 2000,
+        });
+      }, []);
     return (
         <div>
-            <div className="mt-10 mb-10">
+            <Helmet><title>My List Page</title></Helmet>
+            <div className="mt-10 mb-10" data-aos="fade-left"data-aos-anchor="#example-anchor"data-aos-offset="500"data-aos-duration="500">
                 {
                     item.map(item =><div key={item._id}>
                         <div className="overflow-x-auto rounded-2xl mb-5 bg-slate-300">
