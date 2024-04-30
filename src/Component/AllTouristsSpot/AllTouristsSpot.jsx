@@ -13,9 +13,9 @@ const AllTouristsSpot = () => {
             </Helmet>
             <div className=" mt-5">
                 <select className="select select-bordered ">
-                    <option disabled selected>Short By</option>
-                    <option>High Cost</option>
-                    <option>Low Cost</option>
+                    <option>All Spots</option>
+                    <option>High Cost Spot</option>
+                    <option>Low Cost Spot</option>
                 </select>
             </div>
             <div  className="mb-16 mt-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 justify-around">

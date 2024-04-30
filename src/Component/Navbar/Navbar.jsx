@@ -56,7 +56,7 @@ const Navbar = () => {
             <div className="navbar-end gap-2">
                 <Link to={"/Login"}>
                     {user ? <div className="flex gap-1 md:gap-3">
-                    <div data-tooltip-id="tooltip-anchor-show" data-tooltip-place="left" data-tooltip-content={user.displayName}data-tooltip-delay-hide={100}>
+                    <div data-tooltip-id="tooltip-anchor-show" data-tooltip-place="left" data-tooltip-content={user.displayName} data-tooltip-delay-hide={100}>
                         <img className="border rounded-full md:w-[45px] h-7 w-12 md:h-[45px]" src={user.photoURL} />
                     </div>
                     <button onClick={ () => logOut()} className="bg-orange-300 pl-1 pr-1 text-[10px] md:text-[12px] w-20 rounded-lg border md:w-20">Log Out</button>
