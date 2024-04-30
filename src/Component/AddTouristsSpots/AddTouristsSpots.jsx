@@ -44,8 +44,8 @@ const AddTouristsSpots = () => {
             <Helmet>
                 <title>Add Tourists Spots Page</title>
             </Helmet>
-            <div  className=" mb-10">
-                <form onSubmit={handleAddTouristSpot} className=" w-full p-5 text-black bg-gray-300">
+            <div  className=" ">
+                <form onSubmit={handleAddTouristSpot} className=" w-full pb-10 p-5 text-black bg-gray-300">
                     <h1 className="md:text-5xl text-[27px] font-bold text-center mb-4">Add Tourists Spots</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>

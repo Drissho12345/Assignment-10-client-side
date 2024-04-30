@@ -16,7 +16,7 @@ const Card = ({spots,}) => {
       }, []);
     return (
         <div>
-            <div className=" shadow-2xl  p-6 rounded-3xl" data-aos="zoom-in-down">
+            <div className=" shadow-2xl bg-white text-black  p-6 rounded-3xl" data-aos="zoom-in-down">
                 <div className="flex justify-center items-center">
                     <img className="w-full h-[300px]" src={url} alt="" />
                 </div>

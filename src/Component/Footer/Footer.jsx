@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-orange-100 text-base-content">
+            <footer className="footer p-10 bg-orange-100 text-black text-base-content">
                 <nav>
                     <img className="rounded-full h-32 w-32" src="https://f7c7358c.rocketcdn.me/wp-content/uploads/2022/01/cropped-SOUTHEAST-ASIA_ICON_DARK_ORANGE.png" alt="" />
                 </nav> 

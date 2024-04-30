@@ -16,14 +16,14 @@ const GuidesSection = () => {
         });
       }, []);
     return (
-        <div>
-            <div className="text-center mt-16 mb-10">
+        <div> 
+            <div className="text-center   mt-16 mb-10">
                 <h1 className="font-bold mb-6 text-4xl">Meet The Guides</h1>
                 <p>Tourist guides can offer a range of services, including city tours, museum visits, outdoor excursions, <br /> and specialized thematic tours. They may lead groups or provide personalized experiences for individuals or small parties.</p>
             </div>
             <div className="mb-16 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 justify-around" data-aos="zoom-in-down">
                 {/* first */}
-              <div className=" shadow-2xl p-6 rounded-3xl" data-aos="zoom-in-down">
+              <div className=" shadow-2xl p-6 bg-white rounded-3xl" data-aos="zoom-in-down">
                 <div className="flex justify-center items-center">
                     <img className="w-full h-[300px]" src="https://t4.ftcdn.net/jpg/06/44/60/95/360_F_644609560_0IpYpZWJPahX4XeZi4Dyh4OOC4RCulKB.jpg" alt="" />
                 </div>
@@ -44,7 +44,7 @@ const GuidesSection = () => {
                 </div>
               </div>
               {/* second */}
-              <div className=" shadow-2xl p-6 rounded-3xl" data-aos="zoom-in-down">
+              <div className=" shadow-2xl p-6 bg-white rounded-3xl" data-aos="zoom-in-down">
                 <div className="flex justify-center items-center">
                     <img className="w-full h-[300px]" src="https://www.xola.com/wp-content/uploads/2023/10/happy-tour-guide.png" alt="" />
                 </div>
@@ -65,7 +65,7 @@ const GuidesSection = () => {
                 </div>
               </div>
               {/* third */}
-              <div className=" shadow-2xl p-6 rounded-3xl" data-aos="zoom-in-down">
+              <div className=" shadow-2xl p-6 bg-white rounded-3xl" data-aos="zoom-in-down">
                 <div className="flex justify-center items-center">
                     <img className="w-full h-[300px]" src="https://img.freepik.com/premium-photo/girl-man-are-walking-around-old-city-looking-map-happy-travel-concept-generative-ai_260899-3644.jpg" alt="" />
                 </div>
