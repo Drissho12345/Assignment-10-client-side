@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link, Navigate, useNavigate,} from "react-router-dom";
+import { Link, useNavigate,} from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -49,7 +49,7 @@ const Login = () => {
             <div  className="lg:pl-[300px]" data-aos="zoom-in-down">
                 <form onSubmit={handleLogin} className="text-black lg:w-[600px] p-5 bg-gray-300">
                     <div className="mb-6">
-                        <h1 className="text-6xl font-bold text-center mb-4">Login</h1>
+                        <h1 className="md:text-6xl text-3xl font-bold text-center mb-4">Login</h1>
                         <h3 className="font-bold">Email:</h3>
                         <label className="input input-bordered bg-white flex items-center gap-2">
                             <input type="email" name="email" className="grow" placeholder="Email" required/>

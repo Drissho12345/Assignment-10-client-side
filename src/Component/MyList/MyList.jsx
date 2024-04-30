@@ -61,7 +61,7 @@ const MyList = () => {
     return (
         <div>
             <Helmet><title>My List Page</title></Helmet>
-            <div className="mt-10 mb-10" data-aos="fade-left"data-aos-anchor="#example-anchor"data-aos-offset="500"data-aos-duration="500">
+            <div className="mt-10 mb-10"data-aos="zoom-in">
                 {
                     item.map(item =><div key={item._id}>
                         <div className="overflow-x-auto rounded-2xl mb-5 bg-slate-300">

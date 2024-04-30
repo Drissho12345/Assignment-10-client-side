@@ -71,7 +71,7 @@ const Register = () => {
             </Helmet>
             <div  className="lg:pl-[300px] mb-10" data-aos="zoom-in-down">
                 <form className="rounded-2xl  lg:w-[600px] text-black p-5 bg-gray-300"  onSubmit={handleRegister}>
-                    <h1 className="text-5xl font-bold text-center mb-4">Register Now</h1>
+                    <h1 className="md:text-5xl text-3xl font-bold text-center mb-4">Register Now</h1>
                     <div  className="mb-6">
                     <h3 className="font-bold">Name:</h3>
                         <label className="input bg-white input-bordered flex items-center gap-2">
