@@ -32,7 +32,7 @@ const Banner = () => {
                             <div className="flex-1 absolute text-black md:ml-60 mt-10 md:mt-20 w-full md:w-auto">
 
                                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
-                                Welcome Southeast Asia Popular<br />
+                                Welcome <i className="text-[#FF497C]">Southeast <br /> Asia</i> Popular
                                 Tourist Spots... 
                                 </p>
                                 <p className="font-medium text-black/60 md:text-lg text-center md:text-left">
@@ -62,7 +62,7 @@ const Banner = () => {
                             <div className="flex-1 absolute md:ml-60 text-black mt-10 md:mt-20 w-full md:w-auto">
 
                                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
-                                Welcome Southeast Asia Popular<br />
+                                Welcome <i className="text-[#FF497C]">Southeast <br /> Asia</i> Popular
                                 Tourist Spots...
                                 </p>
                                 <p className="font-medium text-black/60 md:text-lg text-center md:text-left">
@@ -93,7 +93,7 @@ const Banner = () => {
                             <div className="flex-1 absolute md:ml-60 text-black mt-10 md:mt-20 w-full md:w-auto">
 
                                <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
-                                Welcome Southeast Asia Popular<br />
+                                Welcome <i className="text-[#FF497C]">Southeast <br /> Asia</i> Popular
                                 Tourist Spots... 
                                 </p>
                                 <p className="font-medium text-black/60 md:text-lg text-center md:text-left">
@@ -124,7 +124,7 @@ const Banner = () => {
                             <div className="flex-1 absolute md:ml-60 text-black mt-10 md:mt-20 w-full md:w-auto">
 
                                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
-                                Welcome Southeast Asia Popular<br />
+                                Welcome <i className="text-[#FF497C]">Southeast <br /> Asia</i> Popular
                                 Tourist Spots...
                                 </p>
                                 <p className="font-medium text-black/60 md:text-lg text-center md:text-left">
