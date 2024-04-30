@@ -64,7 +64,7 @@ const MyList = () => {
             <div className="mt-10 mb-10"data-aos="zoom-in">
                 {
                     item.map(item =><div key={item._id}>
-                        <div className="overflow-x-auto rounded-2xl mb-5 bg-slate-300">
+                        <div className="overflow-x-auto text-black rounded-2xl mb-5 bg-slate-300">
                             <table className="table border">
                                 <tr className="border">
                                     <th className="border">Spots</th>
