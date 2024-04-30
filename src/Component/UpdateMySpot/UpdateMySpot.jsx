@@ -21,7 +21,7 @@ const UpdateMySpot = () => {
 
         const user ={text,name,url,price,TravelTime,seasonality,Total,Location,description}
         // console.log(user);
-        fetch(`http://localhost:5000/spots/${data._id}`,{
+        fetch(`https://my-assignment-server-theta.vercel.app/spots/${data._id}`,{
             method:'PUT',
             headers: {
                 "content-type":"application/json"

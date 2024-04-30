@@ -11,7 +11,7 @@ const CardDetails = () => {
     const {id} = useParams()
     console.log(id);
     useEffect(()=>{
-        fetch(`http://localhost:5000/singleCard/${id}`)
+        fetch(`https://my-assignment-server-theta.vercel.app/singleCard/${id}`)
         .then(res =>res.json())
         .then(data =>{
             setItem(data)

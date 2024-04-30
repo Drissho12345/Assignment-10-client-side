@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path:"/",
         element: <Cards></Cards>,
-        loader:() => fetch('http://localhost:5000/spots')
+        loader:() => fetch('https://my-assignment-server-theta.vercel.app/spots')
       },
       
       {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         element: <ProtectedRoute>
           <CardDetails></CardDetails>
         </ProtectedRoute>,
-        loader: () => fetch('http://localhost:5000/spots')
+        loader: () => fetch('https://my-assignment-server-theta.vercel.app/spots')
       },
       {
         path:"/AddTouristsSpot",
@@ -54,12 +54,12 @@ const router = createBrowserRouter([
       {
         path:"/AllTouristsSpot",
         element:<AllTouristsSpot></AllTouristsSpot>,
-        loader: () => fetch('http://localhost:5000/spots'),
+        loader: () => fetch('https://my-assignment-server-theta.vercel.app/spots'),
       },
       {
         path:"/UpdateMySpot/:id",
         element: <UpdateMySpot></UpdateMySpot>,
-        loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`),
+        loader: ({params}) => fetch(`https://my-assignment-server-theta.vercel.app/spots/${params.id}`),
       },
       {
         path:"/Login",
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         element:<ProtectedRoute>
          <MyList></MyList>
       </ProtectedRoute>,
-        loader: () => fetch('http://localhost:5000/spots'),
+        loader: () => fetch('https://my-assignment-server-theta.vercel.app/spots'),
       },
     ]
   },

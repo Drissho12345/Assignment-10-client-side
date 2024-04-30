@@ -26,7 +26,7 @@ const MyList = () => {
           }).then((result) => {
             if (result.isConfirmed) {
               
-              fetch(`http://localhost:5000/myCardDelete/${_id}`,{
+              fetch(`https://my-assignment-server-theta.vercel.app/myCardDelete/${_id}`,{
                 method: 'DELETE'
               })
               .then(res => res.json())
@@ -45,7 +45,7 @@ const MyList = () => {
     }
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/mySpots/${user?.email}`)
+        fetch(`https://my-assignment-server-theta.vercel.app/mySpots/${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setItem(data);

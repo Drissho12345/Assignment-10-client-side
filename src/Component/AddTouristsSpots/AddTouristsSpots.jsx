@@ -19,7 +19,7 @@ const AddTouristsSpots = () => {
 
         const user ={text,name,url,email,price,Username,TravelTime,seasonality,Total,Location,description}
         console.log(user);
-        fetch(`http://localhost:5000/spots`,{
+        fetch(`https://my-assignment-server-theta.vercel.app/spots`,{
             method:'POST',
             headers: {
                 "content-type":"application/json"
