@@ -17,7 +17,7 @@ const PopularTours = () => {
             </div>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-10 mt-12" data-aos="zoom-in-right">
                 <div>
-                    <img className="h-[400px] w-full" src="http://wahabali.com/work/travelu/images/placeholder/placeholder-01.png" alt="" />
+                    <img className="h-[400px] w-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1bGlcdhlzgYUFtlUNqqQ_Sz-3nWuYCHhOIA&s" alt="Southeast Asia Map" />
                 </div>
                 <div>
                     <h1 className="font-bold text-5xl">Popular Tours</h1>
